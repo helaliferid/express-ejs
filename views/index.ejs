@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+</head>
+<body>
+    <pre>
+        <code>
+            <h1>
+                <!-- <%= JSON.stringify(cars,undefined,3) %> -->
+               
+                <% cars.forEach(car=>{ %>
+                    <li>
+                        <%= car.brand %>
+                    </li>
+                <% }); %>
+            </h1>
+        </code>
+    </pre>
+</body>
+</html>

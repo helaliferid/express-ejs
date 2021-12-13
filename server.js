@@ -6,10 +6,22 @@ const host='http://localhost'
 
 const app=express();
 
+// ejs 
+app.set('views','./views');
+app.set('view engine','ejs');
+
 app.use(express.static('public'));
 
+
+
 app.get('/',(req,res)=>{
-    res.sendFile('./views/index.html',{root:__dirname});
+    const cars=[
+        {brand:'Mercedes'},
+        {brand:'Peugeot'},
+        {brand:'Audi'}];
+
+    const user={username:'EJS',version:'3.2.1'};
+    res.render('index',{cars,user});
 })
 
 
