@@ -28,7 +28,7 @@ app.use(express.static('public'));
 
 
 app.get('/',async (req,res)=>{
-    let cars=await carServices.getAllCars()
+    let cars=await carServices.getAllCars();
     res.render('index',{cars});
 })
 

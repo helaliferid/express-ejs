@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('./partials/head.ejs') %>
+    <%- include('./partials/head') %>
 </head>
+
 <body>
-    <%- include('./partials/navbar.ejs') %>
-    
-    <h1>Home</h1>
-    <pre><code>
-        <%= JSON.stringify(cars,undefined,2) %>
-    </code></pre>
-    <footer>
-        <%- include('./partials/footer.ejs') %>
-    </footer>
-    
-    <!-- Bootstrap Scripts-->
-    <%- include('./partials/scripts.ejs') %>
+    <%- include('./partials/navbar') %>
+
+        <h1>Home</h1>
+        <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+            <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+                <% cars.forEach( (car) => { %>
+                    <%- include("./partials/car_card",{car}) %>
+                <%}); %>
+            </div>
+        </div>
+
+        <footer>
+            <%- include('./partials/footer') %>
+        </footer>
+
+        <!-- Bootstrap Scripts-->
+        <%- include('./partials/scripts') %>
 </body>
+
 </html>

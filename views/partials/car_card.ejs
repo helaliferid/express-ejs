@@ -1,0 +1,32 @@
+<!-- car object -->
+<div class="col">
+    <div class="card h-100 shadow-sm"> <img src="<%= car.photo %>" class="card-img-top" alt="<%= car.brand %>">
+        <div class="card-body">
+            <div class="clearfix mb-3">
+                <span class="float-start badge rounded-pill bg-primary">
+                    <%= car.brand %>
+                </span>
+                <span class="float-end price-hp">
+                    <% if(car.price){ %>
+                        <%= car.price.toFixed(2) %>
+                            <% }else{ %>
+                                0000.00
+                                <% } %>
+                </span>
+            </div>
+            <h5 class="card-title">
+                <%= car.model %>
+                    <% if(car.description){ %>
+                        <%= car.description %>
+                            <% }else{ %>
+                                there is no available description for this product
+                                <% } %>
+            </h5>
+            <div class="text-center my-4">
+                <a href="/" class="btn btn-warning">
+                    Check offer
+                </a>
+            </div>
+        </div>
+    </div>
+   </div>
