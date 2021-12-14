@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express=require('express');
-const port=8080;
-const host='http://localhost';
+const port=process.env.PORT || 3000;
+const host=process.env.HOST || 'http://localhost';
 const mongoose=require('mongoose');
 const carServices= require('./services/cars.service');
 
@@ -53,8 +53,8 @@ app.get((req,res)=>{
    res.json({message:'404 Not found'});
 });
 
-app.listen(port,()=>{
-    console.log(`Server listening on ${host}:${port}`)
+app.listen(port,host,()=>{
+    console.log(`Server listening on ${host}:${port}`);
 })
 
 /*  let result=await carServices.saveCar({
