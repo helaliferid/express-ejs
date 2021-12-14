@@ -57,8 +57,6 @@ app.listen(port,host,()=>{
     console.log(`Server listening on ${host}:${port}`);
 })
 
-/*  let result=await carServices.saveCar({
-    brand:'Mercedes',
-    model:'Kompressor',
-    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Mercedes-Benz_CL203_CLC180_Kompressor.JPG/800px-Mercedes-Benz_CL203_CLC180_Kompressor.JPG'
-}) */
+/*  
+ photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Mercedes-Benz_CL203_CLC180_Kompressor.JPG/800px-Mercedes-Benz_CL203_CLC180_Kompressor.JPG'
+*/
