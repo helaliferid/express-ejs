@@ -33,19 +33,17 @@ app.get('/',async (req,res)=>{
 })
 
 app.get('/contact',async (req,res)=>{
-    let result=await carServices.saveCar({
-        brand:'Mercedes',
-        model:'Kompressor',
-        photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Mercedes-Benz_CL203_CLC180_Kompressor.JPG/800px-Mercedes-Benz_CL203_CLC180_Kompressor.JPG'})
-    res.render('pages/contact',{result});
+   
+    res.render('pages/contact');
 })
 
 app.get('/about',(req,res)=>{
     res.render('pages/about');
 })
 
-app.get('/cars',(req,res)=>{
-    res.render('pages/cars_list');
+app.get('/cars',async (req,res)=>{
+    let cars=await carServices.getAllCars();
+    res.render('pages/cars_list',{cars});
 })
 
 
@@ -58,3 +56,9 @@ app.get((req,res)=>{
 app.listen(port,()=>{
     console.log(`Server listening on ${host}:${port}`)
 })
+
+/*  let result=await carServices.saveCar({
+    brand:'Mercedes',
+    model:'Kompressor',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Mercedes-Benz_CL203_CLC180_Kompressor.JPG/800px-Mercedes-Benz_CL203_CLC180_Kompressor.JPG'
+}) */

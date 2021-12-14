@@ -1,0 +1,16 @@
+<!-- car is passed as argument to car_item-->
+<div class="card car-item mb-4">
+  <div class="row g-4">
+      <div class="col-md-6">
+          <img src="<%= car.photo %>" class="card-img-top" alt="<%= car.brand %>">
+      </div>
+      <div class="col-md-6">
+          <ul class="list-group">
+              <li class="list-group-item" ><span><%= car.brand %></span></li>
+              <li class="list-group-item"><span><%= car.model %></span></li>
+              <li class="list-group-item"><span><%= car.price %></span></li>
+              <li class="list-group-item"><span><%= car.description %></span></li>
+          </ul> 
+      </div>
+  </div>
+</div>

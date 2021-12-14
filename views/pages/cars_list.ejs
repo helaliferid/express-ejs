@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/head') %>
 </head>
 <body>
-    <%- include('../partials/navbar.ejs') %>
+    <%- include('../partials/navbar') %>
     
-    <h1>Cars</h1>
+    <h1>Our Cars</h1>
+   <!-- we have cars injected into this template-->
+    <% cars.forEach(car =>{ %>
+        <div class="container">
+            <%- include('../partials/car_item',{car}); %>
+        </div>
+    <% }); %> 
 
     <footer>
-        <%- include('../partials/footer.ejs') %>
+        <%- include('../partials/footer') %>
     </footer>
     
     <!-- Bootstrap Scripts-->
-    <%- include('../partials/scripts.ejs') %>
+    <%- include('../partials/scripts') %>
 </body>
 </html>
