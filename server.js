@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express=require('express');
 const mainRouter=require('./controllers/routes/main.router');
+const adminRouter=require('./controllers/routes/admin.router');
 const port=process.env.PORT || 3000;
 const host=process.env.HOST || '127.0.0.1';
 const mongoose=require('mongoose');
@@ -28,6 +29,7 @@ app.use(express.static('public'));
 
 // mount the main router
 app.use('/',mainRouter);
+app.use('/admin',adminRouter);
 
 app.get((req,res)=>{
    res.json({message:'404 Not found'});
