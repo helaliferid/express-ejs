@@ -35,7 +35,7 @@ app.get((req,res)=>{
    res.json({message:'404 Not found'});
 });
 
-app.listen(port,host,()=>{
+app.listen(port,()=>{
     console.log(`Server listening on ${host}:${port}`);
 })
 
